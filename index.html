@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mê Truyện</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #101010;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #191919;
+  padding: 18px;
+  border-bottom: 2px solid #e63946;
+}
+
+.logo {
+  color: #ff3344;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+header p {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.search {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #252525;
+  color: white;
+  font-size: 15px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  overflow-x: auto;
+  background: #202020;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+h2 {
+  margin: 20px 15px;
+  border-left: 4px solid #e63946;
+  padding-left: 10px;
+}
+
+.comics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 15px;
+}
+
+.comic {
+  background: #202020;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.comic img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.comic h3 {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.comic p {
+  font-size: 12px;
+  color: #aaa;
+  padding: 0 10px 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">❤️ MÊ TRUYỆN</div>
+  <p>Thế giới truyện tranh dành cho bạn</p>
+  <input class="search" id="search"
+  placeholder="🔍 Tìm kiếm truyện tranh...">
+</header>
+
+<nav>
+  <a href="#">Trang chủ</a>
+  <a href="#truyen">Truyện mới</a>
+  <a href="#truyen">Manga</a>
+  <a href="#truyen">Manhwa</a>
+  <a href="#truyen">Manhua</a>
+</nav>
+
+<h2>🔥 Truyện nổi bật</h2>
+
+<div class="comics" id="truyen">
+
+  <div class="comic">
+    <img src="https://placehold.co/400x550/292929/ffffff?text=Comic+1">
+    <h3>Thế Giới Mới</h3>
+    <p>Chương 01 · Đang cập nhật</p>
+  </div>
+
+  <div class="comic">
+    <img src="https://placehold.co/400x550/292929/ffffff?text=Comic+2">
+    <h3>Hành Trình Bí Ẩn</h3>
+    <p>Chương 05 · Đang cập nhật</p>
+  </div>
+
+  <div class="comic">
+    <img src="https://placehold.co/400x550/292929/ffffff?text=Comic+3">
+    <h3>Ánh Trăng Đêm</h3>
+    <p>Chương 12 · Đang cập nhật</p>
+  </div>
+
+  <div class="comic">
+    <img src="https://placehold.co/400x550/292929/ffffff?text=Comic+4">
+    <h3>Vương Quốc Xa Xôi</h3>
+    <p>Chương 08 · Đang cập nhật</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 MÊ TRUYỆN
+</footer>
+
+<script>
+document.getElementById("search")
+.addEventListener("input", function() {
+  let keyword = this.value.toLowerCase();
+
+  document.querySelectorAll(".comic").forEach(function(item) {
+    item.style.display =
+      item.innerText.toLowerCase().includes(keyword)
+      ? "" : "none";
+  });
+});
+</script>
+
+</body>
+</html>
